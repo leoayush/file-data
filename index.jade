@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  div(class="container-fluid")
+  
+    if (err)
+        div
+            h2(style = "color: red;")= err
+    p
+      a(href="mailto:ayush.studious@gmail.com") 
+        i(class="fa fa-envelope fa-fw")
+      a(href="https://github.com/leoayush" target="_blank") 
+        i(class="fa fa-github fa-fw")
+      a(href="http://codepen.io/leoayush" target="_blank") 
+        i(class="fa fa-codepen")
+      a(href="http://www.freecodecamp.com/leoayush" target="_blank")
+        i(class="fa fa-fire fa-fw")
+    p Created by Ayush Jha.
+    h1(class="header")
+      | FreeCodeCamp API: File Metadata Microservice
+    blockquote
+      p User stories:
+      ol
+        li I can submit a FormData object that includes a file upload.
+        li When I submit something, I will receive the file size in bytes within the JSON response.
+        li Hint: You may want to use this package:
+           a(href="https://www.npmjs.com/package/multer" target='_blank')  Multer
+    h2 Upload file
+    form(role="form", action="/upload", method="post", enctype="multipart/form-data")
+        div(class="form-group")
+            label Upload File
+            input(type="file", name="userFile", id="myfile")
+            input(type='submit', name='send', id='sendFile')
